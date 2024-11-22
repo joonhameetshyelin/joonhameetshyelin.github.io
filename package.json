@@ -2,14 +2,14 @@
   "name": "wedding-invitation",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://joonhameetshyelin.github.io/wedding-invitation/",
+  "homepage": "https://joonhameetshyelin.github.io/wedding-invitation",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "predeploy": "npm run build",
-    "deploy": "touch out/.nojekyll && cp -r out/* . && git add . && git commit -m 'Deploy to GitHub Pages' && git push origin main"
+    "deploy": "next build && next export && touch out/.nojekyll && git add -f out/ && git commit -m 'deploy to gh-pages' && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "@svgr/webpack": "^8.1.0",
@@ -27,6 +27,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
+    "gh-pages": "^6.2.0",
     "typescript": "^5"
   }
 }

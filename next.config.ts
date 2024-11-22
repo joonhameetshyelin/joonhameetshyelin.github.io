@@ -1,14 +1,12 @@
 import type { NextConfig } from "next";
-
+const debug = process.env.NODE_ENV !== "production";
+const repository = "wedding-invitation";
 const nextConfig: NextConfig = {
   /* config options here */
-  reactStrictMode: true,
   output: "export",
-  basePath: "/wedding-invitation",
-  assetPrefix:
-    process.env.NODE_ENV === "production"
-      ? "https://joonhameetshyelin.github.io/wedding-invitation"
-      : "",
+  basePath: `/${repository}`,
+  assetPrefix: !debug ? `/${repository}/` : "", // production 일때 prefix 경로
+  trailingSlash: true, // 빌드 시 폴더 구조 그대로 생성하도록
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/i,
