@@ -1,0 +1,29 @@
+.page {
+  --gray-rgb: 0, 0, 0;
+  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+
+  display: flex;
+  align-items: center;
+  justify-items: center;
+
+  font-family: var(--font-geist-sans);
+}
+
+.main {
+  width: 100%;
+  user-select: none;
+
+  .invitation_container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    max-width: 440px;
+    margin: 0 auto;
+    background-color: #fff;
+    touch-action: pan-y;
+  }
+}
