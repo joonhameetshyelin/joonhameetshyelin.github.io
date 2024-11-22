@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   assetPrefix:
     process.env.NODE_ENV === "production"
-      ? "https://joonhameetshyelin.github.io/joonhameetshyelin"
+      ? "https://joonhameetshyelin.github.io/"
       : "",
   webpack: (config) => {
     config.module.rules.push({
